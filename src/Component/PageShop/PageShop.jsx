@@ -3,10 +3,13 @@ import { useMediaQuery } from 'react-responsive';
 import withListLoading from "./withLoadingMenu";
 import BlockMenu from "./BlockMenu/BlockMenu";
 import BlockShops from "./BlockShops/BlockShops";
+import ModalShops from "./ModalShops/ModalShops";
 import style from './PageShop.module.scss'
+
 
 const PageShop = () => {
     const MenuLoading = withListLoading(BlockMenu);
+    const [modalActive, setModalActive] = useState(false)
     const [menuState, setMenuState] = useState({
         loading: true,
         menu: null,
@@ -33,19 +36,16 @@ const PageShop = () => {
 
     const isMobile = useMediaQuery({ maxWidth: 650 });
     const isDesktop = useMediaQuery({ minWidth: 651 });
-    console.log(menuState.menu)
     
     return (
         <div className={style.pageShop}>
             <div className={style.image}></div>
             <div className={style.content}>
                 {isDesktop && <BlockShops handleClick={handleClick}/>}
-                {isMobile && <button className={style.button}>RESTAURANTS</button>}
+                {isMobile && <button className={style.button} onClick={() => setModalActive(true)}>RESTAURANTS</button>}
                 <MenuLoading isLoading={menuState.loading} data={menuState.menu}/>
-                {/* {menuData &&
-                    <BlockMenu data={menuData} loading={isLoading}/>
-                } */}
             </div>
+            <ModalShops active={modalActive} setActive={setModalActive} handleClick={handleClick}/>
         </div>
     );
 };

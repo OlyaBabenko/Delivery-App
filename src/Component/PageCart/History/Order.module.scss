@@ -1,0 +1,23 @@
+.orderWrapper {
+    border: 5px solid rgb(8, 74, 131);
+    // background-color: rgba(255, 192, 203, 0.55);
+    border-radius: 25px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+
+    .orderNumber {
+        text-align: center;
+
+    }
+    .order {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        justify-content: space-around;
+        
+    }
+}
+

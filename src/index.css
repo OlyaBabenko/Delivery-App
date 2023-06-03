@@ -1,3 +1,16 @@
 *{
   margin: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(7, 7, 7, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(8, 74, 131, 0.6);
+    border-radius: 25px;
+  }
 }
