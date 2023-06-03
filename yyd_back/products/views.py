@@ -33,23 +33,6 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
-    # def create(self, request, *args, **kwargs):
-    #     order_data = request.data.copy()
-    #     items_data = order_data.pop('items', [])
-    #
-    #     order_serializer = self.get_serializer(data=order_data)
-    #     order_serializer.is_valid(raise_exception=True)
-    #     order = order_serializer.save()
-    #
-    #     item_serializer = OrderItemSerializer(data=items_data, many=True)
-    #     item_serializer.is_valid(raise_exception=True)
-    #     items = item_serializer.save(order=order)
-    #
-    #     response_data = order_serializer.data
-    #     response_data['items'] = OrderItemSerializer(items, many=True).data
-    #
-    #     return Response(response_data, status=status.HTTP_201_CREATED)
-
 
 @api_view(['GET'])
 def take_token(request):
