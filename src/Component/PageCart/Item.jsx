@@ -1,13 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addCount, removeCount, removeFromCart } from "../../store/cartReducer";
 import arrowLeft from "../../assets/image/arrow-left.png";
 import arrowRight from "../../assets/image/arrow-right.png";
+
 import style from "./Item.module.scss"
-import { useDispatch, useSelector } from "react-redux";
-import { addCount, removeCount, removeFromCart } from "../../store/cartReducer";
 
 const Item = ({product}) => {
     const dispatch = useDispatch()
-    const cart = useSelector(state => state.cart.cart)
 
     const handleClick= (btn, product) => {
         switch(btn){

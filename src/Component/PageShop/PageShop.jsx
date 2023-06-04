@@ -20,7 +20,7 @@ const PageShop = () => {
     }, [setMenuState]);
 
     const fetchMenu = (value) => {
-        fetch('http://127.0.0.1:8000/products/product/?name=' + encodeURIComponent(value))
+        fetch('https://yyd-back.herokuapp.com/products/product/?name=' + encodeURIComponent(value))
             .then(response => response.json())    
             .then(data => {if (data) {
                 setMenuState({loading: false, menu: data.data})

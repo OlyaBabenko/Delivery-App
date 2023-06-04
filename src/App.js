@@ -11,7 +11,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="app">
         <Header />
         <div style={{height: "100px"}}></div>
         <Routes>

@@ -6,12 +6,13 @@ const BlockShops = ({handleClick}) => {
     const [restaurants, setRestaurants] = useState();
 
     useEffect (() => {
-        fetch('http://127.0.0.1:8000/products/restaurant/')
+        fetch('https://yyd-back.herokuapp.com/products/restaurant/')
             .then(response => response.json())
             .then(data => {
                 setRestaurants(data.data.map(shop => <button onClick={() => handleClick(shop.name)} className={style.button}>{shop.name}</button>))})
             .catch(error => console.log(error))
-    },[])   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     
     return (
         <div className={style.blockShops}>
